@@ -6,7 +6,7 @@ import EditUser from "./components/EditUser"
 const App = () => {
 
   return (
-    <div className="max-w-xl mx-auto">
+    <div className="max-w-5xl mx-auto">
       <Router>
         <Routes>
           <Route path="/" element={<UserList />} />

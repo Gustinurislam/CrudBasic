@@ -58,7 +58,7 @@ const EditUser = () => {
                 </div>
 
                 <div className="flex justify-between" >
-                    {/* <button className="border p-2 rounded-md border-black" type="submit">Cancel</button> */}
+                    <button className="border p-2 rounded-md border-black" type="submit">Cancel</button>
                     <button className="border p-2 rounded-md border-black" type="submit">Update</button>
                 </div>
             </form>

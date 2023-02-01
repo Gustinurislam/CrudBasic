@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, Link } from "react-router-dom"
 
 const AddUser = () => {
     const [name, setName] = useState('')
@@ -47,7 +47,7 @@ const AddUser = () => {
                 </div>
 
                 <div className="flex justify-between" >
-                    <button className="border p-2 rounded-md border-black" type="submit">Cancel</button>
+                    <Link to={'/'} className="border p-2 rounded-md border-black">Cancel</Link>
                     <button className="border p-2 rounded-md border-black" type="submit">Save</button>
                 </div>
             </form>
