@@ -1,11 +1,10 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { useNavigate, useParams } from "react-router-dom"
+import { useNavigate, useParams, Link } from "react-router-dom"
 
 const EditUser = () => {
     const [name, setName] = useState("")
-    const [email, setEmail] = useState('')
-    const [gender, setGender] = useState('Male')
+    const [gender, setGender] = useState('')
     const navigate = useNavigate()
     const { id } = useParams()
 
@@ -18,7 +17,6 @@ const EditUser = () => {
         try {
             await axios.patch(`http://localhost:5000/users/${id}`, {
                 name,
-                email,
                 gender,
             });
             navigate('/')
@@ -29,24 +27,18 @@ const EditUser = () => {
 
     const getUserById = async () => {
         const response = await axios.get(`http://localhost:5000/users/${id}`);
-        const { name, email, gender } = response.data
+        const { name, gender } = response.data
         setName(name);
-        setEmail(email);
         setGender(gender);
     }
 
     return (
-        <div>
-            <h2 className="text-center">Form Update</h2>
+        <div className="mt-5">
+            <h1 className="text-center text-5xl mb-5 font-semibold uppercase italic "><span className='underline decoration-green-500'>Form</span> <span className='underline decoration-yellow-500'>Update</span></h1>
             <form onSubmit={updateUser} className="space-y-5">
                 <div className="flex flex-col">
                     <label>Name</label>
                     <input className="border px-3 py-2 border-black rounded-md" type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" />
-                </div>
-
-                <div className="flex flex-col">
-                    <label>Email</label>
-                    <input className="border px-3 py-2 border-black rounded-md" type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
                 </div>
 
                 <div className="flex flex-col">
@@ -58,8 +50,8 @@ const EditUser = () => {
                 </div>
 
                 <div className="flex justify-between" >
-                    <button className="border p-2 rounded-md border-black" type="submit">Cancel</button>
-                    <button className="border p-2 rounded-md border-black" type="submit">Update</button>
+                    <Link to={'/'} className="border p-2 rounded-md border-black bg-yellow-500" type="submit">Cancel</Link>
+                    <button className="border p-2 rounded-md border-black bg-green-500" type="submit">Update</button>
                 </div>
             </form>
         </div>
