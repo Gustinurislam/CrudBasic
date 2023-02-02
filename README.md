@@ -5,3 +5,6 @@
 
 ## Tablet :
 ![Tablet View](ui/tablet.png)
+
+## Desktop :
+![Desktop View](ui/dekstop.png)
