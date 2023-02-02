@@ -1,4 +1,4 @@
 # Fullstack Javascript - Crud Basic
 
 ## Mobile
-(ui/mobile.png)
+![Mobile View](ui/mobile.png)
